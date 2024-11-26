@@ -8,13 +8,11 @@ import os
 import time
 from datetime import datetime
 
-# Step 1: Get today's date dynamically in the required format
-today_date = datetime.now().strftime("%d-%b-%Y")  # Example: "18-Nov-2024"
+today_date = datetime.now().strftime("%d-%b-%Y")  
 
-# Step 2: Specify the base download folder
-base_download_folder = r"C:\Users\birad\OneDrive\Desktop\NSE BOT\dow_nse_report"
+base_download_folder = r"C:\Users\birad\OneDrive\Desktop\NSE_BOT\Download"
 
-# Step 3: Create a subfolder named with today's date
+
 download_folder = os.path.join(base_download_folder, today_date)
 
 if not os.path.exists(download_folder):
@@ -47,7 +45,7 @@ try:
     # Step 6: Navigate to the NSE URL
     url = "https://www.nseindia.com/all-reports"  # Replace with the correct URL
     driver.get(url)
-    print(f"Searching for reports for the date: {today_date}")
+    print(f"Searching reports for the date: {today_date}")
 
     # Step 7: Locate the date element
     print("Waiting for the date element to be visible...")
